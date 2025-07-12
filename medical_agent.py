@@ -43,14 +43,14 @@ class MedicalReportAnalysis(BaseModel):
 class MedicalReportAnalyzer:
     """AI Agent for analyzing medical reports and providing health insights"""
     
-    def __init__(self, model_name: str = "openai/gpt-4"):
+    def __init__(self):
         """Initialize the medical report analyzer"""
         api_key = os.getenv("OPENROUTER_API_KEY")
         if not api_key or not api_key.strip():
             raise ValueError("OPENROUTER_API_KEY environment variable is required")
         
         self.llm = ChatOpenAI(
-            model=model_name,
+            model="deepseek/deepseek-chat-v3-0324",
             temperature=0.1,
             api_key=SecretStr(api_key),
             base_url="https://openrouter.ai/api/v1"

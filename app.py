@@ -490,18 +490,16 @@ def main():
     # Sidebar
     st.sidebar.markdown('<h2>🔧 Settings</h2>', unsafe_allow_html=True)
     
+    # Model information
+    st.sidebar.info("🤖 Using DeepSeek Chat v3.1 (deepseek/deepseek-chat-v3-0324)")
+    
     # API Key check
     if not os.getenv("OPENROUTER_API_KEY"):
         st.sidebar.error("⚠️ OpenRouter API key not found!")
         st.sidebar.info("Please set your OPENROUTER_API_KEY environment variable")
         return
     
-    # Model selection
-    model_name = st.sidebar.selectbox(
-        "Select AI Model",
-        ["openai/gpt-4", "openai/gpt-3.5-turbo", "anthropic/claude-3-opus", "anthropic/claude-3-sonnet", "meta-llama/llama-3.1-70b-instruct"],
-        help="Choose the AI model for analysis"
-    )
+
     
     # Input method selection
     input_method = st.sidebar.radio(
@@ -523,7 +521,7 @@ def main():
             if medical_text.strip():
                 with st.spinner("Analyzing medical report..."):
                     try:
-                        analyzer = MedicalReportAnalyzer(model_name=model_name)
+                        analyzer = MedicalReportAnalyzer()
                         analysis = analyzer.analyze_report(medical_text)
                         display_analysis_results(analysis)
                     except Exception as e:
@@ -549,7 +547,7 @@ def main():
                 if st.button("🔍 Analyze Uploaded Report", type="primary"):
                     with st.spinner("Analyzing uploaded report..."):
                         try:
-                            analyzer = MedicalReportAnalyzer(model_name=model_name)
+                            analyzer = MedicalReportAnalyzer()
                             analysis = analyzer.analyze_report(medical_text)
                             display_analysis_results(analysis)
                         except Exception as e:
@@ -726,7 +724,7 @@ RECOMMENDATIONS: Immediate cardiology consultation, cardiac catheterization
             if st.button("🔍 Analyze Sample Report", type="primary"):
                 with st.spinner("Analyzing sample report..."):
                     try:
-                        analyzer = MedicalReportAnalyzer(model_name=model_name)
+                        analyzer = MedicalReportAnalyzer()
                         analysis = analyzer.analyze_report(sample_reports[selected_sample])
                         display_analysis_results(analysis)
                     except Exception as e:

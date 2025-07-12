@@ -3,12 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An advanced AI-powered medical report analyzer that uses large language models via OpenRouter to provide comprehensive health insights, risk assessments, and medical recommendations. This tool is designed with a focus on kidney-related conditions, providing detailed analysis for nephrology-related reports.
-
-![App Screenshot](https://i.imgur.com/your-screenshot.png) <!-- It's recommended to replace this with a real screenshot of your app -->
+ed to replace this with a real screenshot of your app -->
 
 ## ✨ Key Features
 
-- **🤖 AI-Powered Analysis**: Leverages state-of-the-art language models (GPT-4, Claude 3, Llama 3.1) for deep analysis.
+- **🤖 AI-Powered Analysis**: Leverages the DeepSeek Chat v3.1 model for deep analysis.
 - **🩺 Kidney Disease Focus**: Specialized prompts and logic for analyzing reports related to kidney disease, dialysis, and transplantation.
 - **📊 Comprehensive Health Insights**: Generates detailed insights on medical conditions, lab values, and risk factors.
 - **⚠️ Risk Assessment**: Automated risk scoring and urgent alert detection for critical findings.
@@ -30,8 +29,8 @@ Follow these instructions to set up and run the DCC Medical Report Agent on your
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/OliseNS/Medical_Report_Agent.git
+    cd Medical_Report_Agent
     ```
 
 2.  **Install the required dependencies:**
@@ -67,7 +66,7 @@ The application will open in your browser at `http://localhost:8501`.
 
 ## 💻 How to Use
 
-1.  **Select an AI Model**: Choose from the available models in the sidebar (e.g., GPT-4, Claude 3, Llama 3.1).
+1.  **AI Model**: The system uses the DeepSeek Chat v3.1 model for analysis.
 2.  **Choose an Input Method**:
     - **📝 Text Input**: Paste the medical report text directly into the text area.
     - **📁 File Upload**: Upload a `.txt` file containing the medical report.
